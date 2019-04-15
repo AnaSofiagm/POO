@@ -4,5 +4,5 @@ public class Cliente extends Ator
 {
     public static final int VELOCIDADE = 4;
     private Point2D localizacao;
-    // private List<Aluguer> alugados;
+    private List<Aluguer> alugados;
 }

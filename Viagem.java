@@ -1,4 +1,5 @@
 import java.awt.geom.Point2D;
+import java.util.Date;
 
 public class Viagem
 {
@@ -15,7 +16,7 @@ public class Viagem
         
     }
     
-    public double tempoViagem(){
+    public Date tempoViagem(){
         return getDistancia()/velocidade;
     }
 }
