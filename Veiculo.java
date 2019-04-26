@@ -1,5 +1,6 @@
 import java.awt.geom.Point2D;
-
+import java.util.TreeSet;
+import java.util.Set;
 
 public class Veiculo
 {
@@ -7,10 +8,11 @@ public class Veiculo
     private double velocidade;
     private double precoBaseKm;
     private double consumoKm;
-    // private List<Aluguer> alugueresRealizados;
+    private Set<Aluguer> alugueresRealizados;
     private int classificacao;
     private Point2D localizacao;
     private double autonomiaMaxima;
     private double autonomiaAtual;
-
+    private boolean disponibilidade;
+    private Proprietario prop;
 }

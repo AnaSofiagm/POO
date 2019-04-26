@@ -6,6 +6,7 @@ public class Viagem
     private Point2D localizacaoInicial;
     private Point2D localizacaoDestino;
     private double velocidade;
+    private double preçoviagem;
     
     
     public Viagem (Point2D localizacaoInicial, Point2D localizacaoDestino, double velocidade){
