@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=Proprietario
+comment1.params=
+comment1.target=Proprietario()
+comment1.text=\r\n\ Cria\ uma\ inst\u00E2ncia\ de\ proprietario\r\n\ \r\n
+comment2.params=p
+comment2.target=Proprietario(Proprietario)
+comment2.text=\r\n\ Construtor\ por\ c\u00F3pia.\r\n\ @param\ p\ \r\n
+comment3.params=email\ nome\ password\ morada\ datanascimento\ classificacao
+comment3.target=Proprietario(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.util.Date,\ int)
+comment3.text=\r\n\ Construtor\ por\ parametro\r\n\ @param\ classificacao\r\n
+comment4.params=
+comment4.target=int\ getClassificacao()
+comment5.params=classificacao
+comment5.target=void\ setClassificacao(int)
+comment6.params=
+comment6.target=java.util.Set\ getHistoricoAlugados()
+comment7.params=
+comment7.target=java.util.List\ getVeiculos()
+comment8.params=
+comment8.target=Proprietario\ clone()
+comment8.text=\r\n\ Devolve\ uma\ c\u00F3pia\ desta\ inst\u00E2ncia\r\n\ @return\ \r\n
+comment9.params=obj
+comment9.target=boolean\ equals(java.lang.Object)
+comment9.text=\r\n\ Compara\ a\ igualdade\ com\ outro\ objecto\r\n\ @param\ obj\r\n\ @return\ \r\n
+numComments=10

@@ -34,13 +34,13 @@ public class Veiculo
      */
     public Veiculo(){
         super();
-        this.tipo = Gasolina;
+        this.tipo = TipoVeiculo.Gasolina;
         this.velocidadeKm = 0;
         this.precoBaseKm = 0;
         this.consumoKm = 0;
         this.alugueresRealizados = new TreeSet<Aluguer>();
         this.classificacao = 0;
-        this.localizacao = Point2D.Double(0,0); //iniciliaza nas coordenadas (0,0)
+        this.localizacao = new Point2D.Double(0,0); //iniciliaza nas coordenadas (0,0)
         this.autonomiaMaxima = 0;
         this.autonomiaAtual = 0;
         this.disponibilidade = false;
@@ -52,7 +52,7 @@ public class Veiculo
      * @param v
      */
     public Veiculo(Veiculo v){
-        super(v);
+        super();
         this.tipo = v.getTipo();
         this.velocidadeKm = v.getVelocidadeKm();
         this.precoBaseKm = v.getPrecoBaseKm();

@@ -1,4 +1,4 @@
-
+import java.awt.geom.Point2D;
 
 public class Aluguer
 {
@@ -146,7 +146,7 @@ public class Aluguer
     }
 
     public Aluguer (Point2D localizacaoCliente, Point2D localizacaoInicial, Point2D localizacaoDestino,Veiculo v){
-        this.viagemCliente = new Viagem (localizacaoCliente, localizacaoInicial , Cliente.VELOCIDADE);
-        this.viagemCarro = new Viagem (localizacaoInicial, localizacaoDestino , v.getVelocidade());
+        this.viagemCliente = new Viagem (localizacaoCliente, localizacaoInicial , Cliente.VELOCIDADE, 0 );
+        this.viagemCarro = new Viagem (localizacaoInicial, localizacaoDestino , v.getVelocidadeKm(), 0);
     }
 }

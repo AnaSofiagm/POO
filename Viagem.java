@@ -18,8 +18,8 @@ public class Viagem
      *
      */
     public Viagem(){
-        this.localizacaoInicial = Pointd2D.Double(0,0);//incia a 0
-        this.localizacaoDestino = Point2D.Double();//inicia a 0
+        this.localizacaoInicial = new Point2D.Double(0,0);//incia a 0
+        this.localizacaoDestino = new Point2D.Double(0,0);//inicia a 0
         this.velocidade = 0;
         this.precoviagem = 0;
     }
