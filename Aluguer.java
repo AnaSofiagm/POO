@@ -13,10 +13,10 @@ public class Aluguer
     private Viagem viagemCliente;
     //Custo total do aluguer
     private double custoTotal;
-
+    // true se for maisPerto
+    private boolean preferencia;
     /**
      * Cria uma instância de cliente
-     *
      */
     public Aluguer(){
         this.veiculo = new Veiculo();
@@ -45,7 +45,7 @@ public class Aluguer
      * @param viagemCliente
      * @param custoTotal
      */
-    public Aluguer(Veiculo veiculo, Cliente cliente, Viagem viagemCarro, Viagem viagemCliente, double custoTotal) {
+    public Aluguer(Cliente cliente, Point2D destino, T) {
         this.veiculo = veiculo;
         this.cliente = cliente;
         this.viagemCarro = viagemCarro;
@@ -69,8 +69,6 @@ public class Aluguer
         this.cliente = cliente;
     }
 
- 
-
     public Viagem getViagemCarro() {
         return viagemCarro;
     }
@@ -93,6 +91,14 @@ public class Aluguer
 
     public void setCustoTotal(double custoTotal) {
         this.custoTotal = custoTotal;
+    }
+    
+    public boolean getPreferencia(){
+        return this.preferencia;
+    }
+    
+    public void setPreferencia(boolean preferencia){
+        this.preferencia = preferencia;
     }
 
     /**
