@@ -4,7 +4,7 @@ import java.util.Set;
 import java.util.Date;
 
 
-public class Cliente extends Ator
+public class Cliente extends Utilizador
 {
     /** Variaveis de Instância */
     // velocidade a que uma pessoa se desloca a pé, definimos como uma variavel estática com valor 4km/hora

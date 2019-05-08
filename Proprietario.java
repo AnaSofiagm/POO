@@ -4,7 +4,7 @@ import java.util.TreeSet;
 import java.util.Set;
 import java.util.Date;
 
-public class Proprietario extends Ator
+public class Proprietario extends Utilizador
 {
     /** Variaveis de Instância */
     // lista de veiculos dos quais é propriétário

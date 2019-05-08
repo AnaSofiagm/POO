@@ -1,5 +1,6 @@
 import java.awt.geom.Point2D;
 import java.util.Date;
+import java.lang.Math;
 
 public class Viagem
 {
@@ -114,18 +115,23 @@ public class Viagem
         sb.append("Preco da viagem:").append(precoviagem).append("'\n");
         return sb.toString();
     }
-}
+
 /* funcoes por fazer
 
     public Viagem (Point2D localizacaoInicial, Point2D localizacaoDestino, double velocidade){
         
-    }
+    }*/
     
     public double getDistancia(){
-        
+        double x1 = localizacaoInicial.getX();
+        double x2 = localizacaoDestino.getX();
+        double y1 = localizacaoInicial.getY();
+        double y2 = localizacaoDestino.getY();
+        double distancia = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        return distancia;
     }
     
-    public Date tempoViagem(){
+    public double tempoViagem(){
         return getDistancia()/velocidade;
     }
-*/
+}

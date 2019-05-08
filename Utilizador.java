@@ -1,6 +1,7 @@
 import java.util.Date;
+import java.io.*;
 
-public abstract class Ator
+public abstract class Utilizador implements Serializable
 {
     // variáveis de instância 
     // email do ator
@@ -17,7 +18,7 @@ public abstract class Ator
      /**
      * Cria uma instância de hotel
      */
-    public Ator(){
+    public Utilizador(){
         this.email = "n/a";
         this.nome = "n/a";
         this.password = "n/a";
@@ -29,7 +30,7 @@ public abstract class Ator
      * Construtor por cópia.
      * @param a 
      */
-    public Ator(Ator a) {
+    public Utilizador(Utilizador a) {
         this.email = a.getEmail();
         this.nome = a.getNome();
         this.password = a.getPassword();
@@ -44,7 +45,7 @@ public abstract class Ator
      * @param morada
      * @param datanascimento
      */
-    public Ator(String email, String nome, String password,String morada,Date datanascimento){
+    public Utilizador(String email, String nome, String password,String morada,Date datanascimento){
         this.email = email;
         this.nome = nome;
         this.password = password;
@@ -145,7 +146,7 @@ public abstract class Ator
         if(obj == null || obj.getClass() != this.getClass()) {
             return false;
         }
-        Ator a = (Ator) obj;
+        Utilizador a = (Utilizador) obj;
         return a.getEmail().equals(email) && a.getNome().equals(nome) && 
                 a.getPassword().equals(password) && a.getDataNascimento() == datanascimento;
     }
@@ -156,7 +157,7 @@ public abstract class Ator
      */
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Ator:").append(nome).append("'\n");
+        sb.append("Utilizador:").append(nome).append("'\n");
         sb.append("Email:").append(email).append("'\n");
         sb.append("Password:").append(password).append("'\n");
         sb.append("Morada:").append(morada).append("'\n");
@@ -168,7 +169,7 @@ public abstract class Ator
      * Devolve uma cópia desta instância
      * @return 
      */
-    public abstract Ator clone();
+    public abstract Utilizador clone();
 
    
 }
