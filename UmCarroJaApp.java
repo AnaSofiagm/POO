@@ -170,23 +170,46 @@ public class UmCarroJaApp
         Scanner input = new Scanner(System.in).useDelimiter("\\n");
         System.out.println("REGISTO DE UTILIZADOR\n");
         Utilizador novo;
+        
+        String tipo, nome, email, password, morada;
+        Date dataN;
+        int classif;
+        Point2D loc = new Point2D();
+        
         System.out.println("Pretende registar-se como Proprietario(P) ou Cliente(C)?");
-        String tipo = input.next();
+        tipo = input.next();
+        
         System.out.print("Nome: ");
-        String nome = input.next();
+        nome = input.next();
+        
         System.out.print("Email: ");
-        String email = input.next();
+        email = input.next();
+        
         System.out.print("Password: ");
-        String password = input.next();
+        password = input.next();
+        
         System.out.print("Morada: ");
-        String morada = input.next();
-        System.out.print("Data de nascimento: ");
-        Date dataN = input.next();
+        morada = input.next();
+        
+        int ano, mes, dia;
+        System.out.print("Data de nascimento: Ano :");
+        ano = input.nextInt();
+        System.out.print("Data de nascimento: Mes :");
+        mes = input.nextInt();
+        System.out.print("Data de nascimento: Dia :");
+        dia = input.nextInt();
+        dataN = new Date(ano, mes, dia);
+        
         System.out.print("Classificação: ");
-        int classif = input.next();
-        System.out.print("Localização: ");
-        Point2D loc = input.next();
-
+        classif = input.nextInt();
+        
+        int x, y;
+        System.out.print("Localização: X : ");
+        x = input.nextInt();
+        System.out.print("Localização: Y : ");
+        y = input.nextInt();
+        loc.setLocation(x, y); 
+        
         if (tipo.equals("P")) novo = new Proprietario(nome, email, password, morada, dataN, classif);
         else novo = new Cliente(nome, email, password, morada, dataN,loc);
         atual.registarUtilizador(novo);
