@@ -4,15 +4,17 @@ import java.io.*;
 public abstract class Utilizador implements Serializable
 {
     // variáveis de instância 
-    // email do ator
+    // email do utilizador
     private String email;
-    // nome do ator
+    // nome do utilizador
     private String nome;
-    // password do ator
+    //nif do utilizador
+    private int nif;
+    // password do utilizador
     private String password;
-    // morada do ator
+    // morada do utilizador
     private String morada;
-    // data de nascimento do ator
+    // data de nascimento do utilizador
     private Date datanascimento;
     
      /**
@@ -21,6 +23,7 @@ public abstract class Utilizador implements Serializable
     public Utilizador(){
         this.email = "n/a";
         this.nome = "n/a";
+        this.nif = 0;
         this.password = "n/a";
         this.morada = "n/a";
         this.datanascimento = new Date();
@@ -33,6 +36,7 @@ public abstract class Utilizador implements Serializable
     public Utilizador(Utilizador a) {
         this.email = a.getEmail();
         this.nome = a.getNome();
+        this.nif = a.getNif();
         this.password = a.getPassword();
         this.morada = a.getMorada();
         this.datanascimento = a.getDataNascimento();
@@ -41,13 +45,15 @@ public abstract class Utilizador implements Serializable
      * Construtor por parametro
      * @param email
      * @param nome
+     * @param nif
      * @param password
      * @param morada
      * @param datanascimento
      */
-    public Utilizador(String email, String nome, String password,String morada,Date datanascimento){
-        this.email = email;
+    public Utilizador(String nome,int nif, String email, String password,String morada,Date datanascimento){
         this.nome = nome;
+        this.nif = nif;
+        this.email = email;
         this.password = password;
         this.morada = morada;
         this.datanascimento = datanascimento;
@@ -68,7 +74,10 @@ public abstract class Utilizador implements Serializable
     public void setEmail(String email) {
         this.email = email;
     }
-
+    
+    public int getNif(){ return nif;}
+    public void setNif(int nif){ this.nif = nif;}
+    
     /**
      * Obter o nome do ator
      * @return 
@@ -147,7 +156,7 @@ public abstract class Utilizador implements Serializable
             return false;
         }
         Utilizador a = (Utilizador) obj;
-        return a.getEmail().equals(email) && a.getNome().equals(nome) && 
+        return a.getEmail().equals(email) && a.getNome().equals(nome) && a.getNif() == nif &&
                 a.getPassword().equals(password) && a.getDataNascimento() == datanascimento;
     }
     
@@ -158,6 +167,7 @@ public abstract class Utilizador implements Serializable
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Utilizador:").append(nome).append("'\n");
+        sb.append("Nif:").append(nif).append("'\n");
         sb.append("Email:").append(email).append("'\n");
         sb.append("Password:").append(password).append("'\n");
         sb.append("Morada:").append(morada).append("'\n");

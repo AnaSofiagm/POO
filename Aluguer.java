@@ -15,6 +15,8 @@ public class Aluguer
     private double custoTotal;
     // true se for maisPerto
     private boolean preferencia;
+    // posicao destino indicada pelo cliente quando pretende fazer um aluguer
+    private Point2D posicaoF;
     /**
      * Cria uma instância de cliente
      */
@@ -44,15 +46,25 @@ public class Aluguer
      * @param viagemCarro
      * @param viagemCliente
      * @param custoTotal
+     * @param preferencia
+     * @param posicaoF
      */
-    public Aluguer(Cliente cliente, Point2D destino, T) {
+    public Aluguer(Veiculo veiculo,Cliente cliente, Viagem viagemCarro, 
+    Viagem viagemCliente, double custoTotal, boolean preferencia, Point2D posicaoF ) {
         this.veiculo = veiculo;
         this.cliente = cliente;
         this.viagemCarro = viagemCarro;
         this.viagemCliente = viagemCliente;
         this.custoTotal = custoTotal;
+        this.preferencia = preferencia;
+        this.posicaoF = posicaoF;
     }
-
+    
+    public Point2D getPosicaoF (){
+        return viagemCarro.getLocalizacaoDestino();
+    }
+    
+    
     public Veiculo getVeiculo() {
         return veiculo;
     }
@@ -114,7 +126,8 @@ public class Aluguer
         Aluguer a = (Aluguer) obj;
         return (a.getVeiculo().equals(this.veiculo) && a.getCliente().equals(this.cliente) &&
                  a.getViagemCarro().equals(this.viagemCarro)
-                    && a.getCliente().equals(this.viagemCliente) && a.getCustoTotal() == this.custoTotal);
+                    && a.getCliente().equals(this.viagemCliente) && a.getCustoTotal() == this.custoTotal
+                    && a.getPreferencia() == this.preferencia && a.getPosicaoF() == this.posicaoF);
     }
 
     /**
@@ -135,6 +148,10 @@ public class Aluguer
         sb.append("Cliente:").append(cliente).append("'\n");
         sb.append("Viagem do Carro:").append(viagemCarro).append("'\n");
         sb.append("Viagem do Cliente:").append(viagemCliente).append("'\n");
+        sb.append("Custo Total do Aluguer:").append(custoTotal).append("'\n");
+        sb.append("Preferencia:").append(preferencia).append("'\n");
+        sb.append("Posicao Final:").append(posicaoF).append("'\n");
+
         return sb.toString();
     }
 

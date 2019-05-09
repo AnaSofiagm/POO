@@ -9,7 +9,7 @@ import static java.util.stream.Collectors.joining;
 public class UmCarroJa implements Serializable
 {
     // variáveis de instância
-    private Map<String, Utilizador> utilizadores; // Chave == email
+    private Map<String, Utilizador> utilizadores; // Chave == nif
     private String atualUser;
     private boolean online;
     private int count;
@@ -19,11 +19,11 @@ public class UmCarroJa implements Serializable
      */
     public UmCarroJa() {
         this.utilizadores = new TreeMap<>();
-        this.atualUser = "admin@email.com";
+        this.atualUser = "admin@emai";
         this.online = false;
         this.count = 0;
         Date d = new Date(12,12,1992);
-        this.admin = new Proprietario("admin@email.com", "admin", "a123", "n/a", d, 12);
+        this.admin = new Proprietario("admin", 558192493, "admin@emai.com", "a123", "n/a", d, 12);
     }
     
     /**

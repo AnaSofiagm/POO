@@ -40,8 +40,8 @@ public class Proprietario extends Utilizador
      * Construtor por parametro
      * @param classificacao
      */
-    public Proprietario(String email, String nome, String password, String morada, Date datanascimento, int classificacao){
-        super(email, nome, password, morada, datanascimento);
+    public Proprietario(String nome, int nif, String email, String password, String morada, Date datanascimento, int classificacao){
+        super(nome,nif,email, password, morada, datanascimento);
         this.veiculos = new ArrayList<Veiculo>();
         this.historicoAlugados = new TreeSet<Aluguer>();
         this.classificacao = classificacao;

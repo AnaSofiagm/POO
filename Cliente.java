@@ -38,8 +38,8 @@ public class Cliente extends Utilizador
      * Construtor por parametro
      * @param localizacao
      */
-    public Cliente(String email, String nome, String password, String morada, Date datanascimento, Point2D localizacao){
-        super(email, nome, password, morada, datanascimento);
+    public Cliente(String nome, int nif, String email, String password, String morada, Date datanascimento, Point2D localizacao){
+        super(nome,nif,email, password, morada, datanascimento);
         this.localizacao = localizacao;
         this.alugueres = new TreeSet<Aluguer>();
     }
