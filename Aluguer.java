@@ -1,4 +1,5 @@
 import java.awt.geom.Point2D;
+import java.util.Date;
 
 public class Aluguer
 {
@@ -7,6 +8,8 @@ public class Aluguer
     private Veiculo veiculo;
     //Cliente que realizou o aluguer
     private Cliente cliente;
+    // data em que foi realizado o aluguer
+    private Date dataAluguer;
     //Viagem que o carro fez no aluguer
     private Viagem viagemCarro;
     //Viagem que o Cliente fez ate ao carro
@@ -23,6 +26,7 @@ public class Aluguer
     public Aluguer(){
         this.veiculo = new Veiculo();
         this.cliente = new Cliente();
+        this.dataAluguer = new Date();
         this.viagemCarro = new Viagem();
         this.viagemCliente = new Viagem();
         this.custoTotal = 0;
@@ -35,6 +39,7 @@ public class Aluguer
     public Aluguer(Aluguer a) {
         this.veiculo = a.getVeiculo();
         this.cliente = a.getCliente();
+        this.dataAluguer = a.getDataAluguer();
         this.viagemCarro = a.getViagemCarro();
         this.viagemCliente = a.getViagemCliente();
         this.custoTotal = a.getCustoTotal();
@@ -43,16 +48,18 @@ public class Aluguer
      * Construtor por parametro
      * @param veiculo
      * @param cliente
+     * @param dataAluguer
      * @param viagemCarro
      * @param viagemCliente
      * @param custoTotal
      * @param preferencia
      * @param posicaoF
      */
-    public Aluguer(Veiculo veiculo,Cliente cliente, Viagem viagemCarro, 
+    public Aluguer(Veiculo veiculo,Cliente cliente,Date dataAluguer, Viagem viagemCarro, 
     Viagem viagemCliente, double custoTotal, boolean preferencia, Point2D posicaoF ) {
         this.veiculo = veiculo;
         this.cliente = cliente;
+        this.dataAluguer = dataAluguer;
         this.viagemCarro = viagemCarro;
         this.viagemCliente = viagemCliente;
         this.custoTotal = custoTotal;
@@ -64,6 +71,10 @@ public class Aluguer
         return viagemCarro.getLocalizacaoDestino();
     }
     
+    public Date getDataAluguer(){ return dataAluguer;}
+    
+    public void setDataAluguer( Date dataAluguer){
+        this.dataAluguer = dataAluguer;}
     
     public Veiculo getVeiculo() {
         return veiculo;
@@ -125,7 +136,7 @@ public class Aluguer
         }
         Aluguer a = (Aluguer) obj;
         return (a.getVeiculo().equals(this.veiculo) && a.getCliente().equals(this.cliente) &&
-                 a.getViagemCarro().equals(this.viagemCarro)
+                 a.getDataAluguer() == this.dataAluguer && a.getViagemCarro().equals(this.viagemCarro)
                     && a.getCliente().equals(this.viagemCliente) && a.getCustoTotal() == this.custoTotal
                     && a.getPreferencia() == this.preferencia && a.getPosicaoF() == this.posicaoF);
     }
@@ -146,6 +157,7 @@ public class Aluguer
         StringBuilder sb = new StringBuilder();
         sb.append("Veiculo:").append(veiculo).append("'\n");
         sb.append("Cliente:").append(cliente).append("'\n");
+        sb.append("Data em que o Aluguer foi efetuado:").append(dataAluguer).append("'\n");
         sb.append("Viagem do Carro:").append(viagemCarro).append("'\n");
         sb.append("Viagem do Cliente:").append(viagemCliente).append("'\n");
         sb.append("Custo Total do Aluguer:").append(custoTotal).append("'\n");
