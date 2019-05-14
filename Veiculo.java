@@ -266,4 +266,13 @@ public class Veiculo
        // sb.append("Proprietario do Carro:").append(proprietario).append("'\n");
         return sb.toString();
     }
+
+    public static TipoVeiculo stringToTipo(String s){
+        if(s.equals("gasolina"))
+            return TipoVeiculo.Gasolina;
+        else if (s.equals("electrico"))
+            return TipoVeiculo.Electrico;
+        else
+            return TipoVeiculo.Hibrido;
+    }
 }

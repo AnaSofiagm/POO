@@ -22,7 +22,7 @@ public class LeituraFiles {
                 if (campos[0].equals("NovoCarro")){
                     camposaux = campos[1].split(",");
                     Veiculo v = new Veiculo();
-                    //v.setTipo(TipoVeiculo.camposaux[0]);
+                    v.setTipo(stringToTipo(camposaux[0]));
                     v.setMarca(camposaux[1]);
                     v.setMatricula(camposaux[2]);
                     v.setNif(Integer.parseInt(camposaux[3]));
@@ -31,7 +31,7 @@ public class LeituraFiles {
                     v.setConsumoKm(Double.parseDouble(camposaux[6]));
                     v.setAutonomiaMaxima(Double.parseDouble(camposaux[7]));
                     v.setAutonomiaAtual(Double.parseDouble(camposaux[7]));
-                    //v.setLocalizacao(new Point2D(Double.parseDouble(camposaux[8]), Double.parseDouble(camposaux[9]));
+                    v.setLocalizacao(new Point2D(Double.parseDouble(camposaux[8] ),Double.parseDouble(camposaux[9])));
                     System.out.println(camposaux[0]); //tipo
                     System.out.println(camposaux[1]); //marca
                     System.out.println(camposaux[2]); //matricula
