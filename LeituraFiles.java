@@ -31,7 +31,7 @@ public class LeituraFiles {
                     v.setConsumoKm(Double.parseDouble(camposaux[6]));
                     v.setAutonomiaMaxima(Double.parseDouble(camposaux[7]));
                     v.setAutonomiaAtual(Double.parseDouble(camposaux[7]));
-                    v.setLocalizacao(Point2D.Double(Double.parseDouble(camposaux[8]),Double.parseDouble(camposaux[9])));
+                    v.setLocalizacao(new Point2D.Double(Double.parseDouble(camposaux[8]),Double.parseDouble(camposaux[9])));
                     System.out.println(camposaux[0]); //tipo
                     System.out.println(camposaux[1]); //marca
                     System.out.println(camposaux[2]); //matricula
