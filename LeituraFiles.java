@@ -42,7 +42,7 @@ public class LeituraFiles {
                     System.out.println(camposaux[7]); //autonomia
                     System.out.println(camposaux[8]); //X
                     System.out.println(camposaux[9]); //Y
-                lv.add(v);
+                    lv.add(v);
                 }
             }
             for (Veiculo v : lv){
